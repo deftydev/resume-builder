@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content%}
+{% if error%}
+{{error}}
+<br/>
+<br/>
+{% endif %}
+
+
+<div class="jumbotron">
+  <h1>CREATE!</h1>
+  <div class="text-muted">**Carefully create as it will be seen by someone</div>
+  <br/>
+  <form method="POST" action="{% url 'create' %}" enctype="multipart/form-data">
+
+  {% csrf_token%}
+  {{form|crispy}}
+
+  <input class="btn btn-secondary" type="submit" value="Add RESUME!"/>
+
+  </form>
+  </div>
+
+{% endblock %}

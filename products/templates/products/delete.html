@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content%}
+{% if error%}
+{{error}}
+<br/>
+<br/>
+{% endif %}
+
+
+<div class="jumbotron">
+  <h1>delete! Your Resume {{product}}</h1>
+  <div class="text-muted">**Delete</div>
+  <br/>
+  <form method="POST" action="" enctype="multipart/form-data">
+
+  {% csrf_token%}
+  {{form|crispy}}
+
+  <input  type="submit" value="delete" class="w-100 text-white text-center my-2 btn btn-danger"/>
+
+  </form>
+  </div>
+
+{% endblock %}

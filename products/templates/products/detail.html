@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+
+{% block content%}
+{% if error%}
+{{error}}
+<br/>
+<br/>
+{% endif %}
+
+{% load staticfiles%}
+
+<div style="border-left:2px solid #000000;border-right:2px solid #000000;border-bottom:2px solid #000000;border-top:4px solid #000000; padding:2px 0px 2px 2px">
+<div class="row" >
+  <div class="col-12 col-sm-4 align-self-center">
+    <img src="{{product.image.url}}" class="img-fluid" width="180" height="140"/>
+  </div>
+  <div class="col-12 col-sm-7 align-self-center">
+    <strong>{{product.hunter.username}}</strong><br/>
+    {{product.email}}<br/>
+    {{product.address}}<br/>
+    Mobile:{{product.mobile}}
+</div>
+</div>
+
+<div style=" padding:2px 16px 0px 14px">
+<div class="row"><div class="col-12 col-sm-12 col-md-12" style="border:2px solid #000000;background:#808080"><strong>CAREER OBJECTIVE</strong></div>
+  <div class="row" >
+
+<div class="col-12 col-sm-12 col-md-12"><ul>
+    <li>{{product.career}}</li>
+    </ul>
+    </div>
+    </div>
+    </div>
+
+
+
+
+<div class="row"><div class="col-12 col-sm-12 col-md-12" style="border:2px solid #000000;background:#808080"><strong>ACADEMIC DETAILS</strong></div>
+<div class="row">
+  <div class="col-12 col-sm-12 col-md-12"><ul>
+    <li>{{product.btech}}</li>
+    <li>{{product.inter}}</li>
+    <li>{{product.high}}</li>
+
+  </ul>
+    </div>
+</div>
+</div>
+
+
+
+
+<div class="row"><div class="col-12 col-sm-12 col-md-12" style="border:2px solid #000000;background:#808080"><strong>WORK EXPERIENCE</strong></div>
+<div class="row">
+  <div class="col-12 col-sm-12 col-md-12">
+    <ul>
+      <li>{{product.work}}</li>
+    <ul>
+</div>
+</div>
+</div>
+
+
+<div class="row"><div class="col-12 col-sm-12 col-md-12" style="border:2px solid #000000;background:#808080"><strong>PROJECT DETAILS</strong></div>
+<div class="row">
+  <div class="col-12 col-sm-12 col-md-12"><ul>
+    <li><b>{{product.title1}}</b></li>
+    Description&nbsp&nbsp&nbsp:&nbsp&nbsp{{product.description1}}<br/>
+    Team&nbspSize&nbsp&nbsp&nbsp&nbsp&nbsp:&nbsp&nbsp{{product.teamsize1}}<br/>
+    Role&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:&nbsp&nbsp{{product.role1}}<br/>
+
+  </ul>
+<ul>
+    <li><b>{{product.title2}}</b></li>
+    Description&nbsp&nbsp&nbsp:&nbsp&nbsp{{product.description2}}<br/>
+    Team&nbspSize&nbsp&nbsp&nbsp&nbsp&nbsp:&nbsp&nbsp{{product.teamsize2}}<br/>
+    Role&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:&nbsp&nbsp{{product.role2}}<br/>
+
+  </ul>
+    </div>
+</div>
+</div>
+
+<div class="row"><div class="col-12 col-sm-12 col-md-12" style="border:2px solid #000000;background:#808080"><strong>FIELD OF INTEREST</strong></div>
+<div class="row">
+  <div class="col-12 col-sm-12 col-md-12">
+    <ul>
+      <li>{{product.field}}</li>
+    <ul>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-12 col-sm-12 col-md-12" style="border:2px solid #000000;background:#808080"><strong>SKILLS</strong></div>
+<div class="row">
+  <div class="col-12 col-sm-12 col-md-12">
+    <ul>
+
+      <li>{{product.skill1}}</li>
+      <li>{{product.skill2}}</li>
+      <li>{{product.skill3}}</li>
+
+    </ul>
+</div>
+</div>
+</div>
+
+<div class="row"><div class="col-12 col-sm-12 col-md-12" style="border:2px solid #000000;background:#808080"><strong>ACHIEVEMENTS</strong></div>
+<div class="row">
+  <div class="col-12 col-sm-12 col-md-12">
+    <ul>
+
+      <li>{{product.achievement1}}</li>
+      <li>{{product.achievement2}}</li>
+      <li>{{product.achievement3}}</li>
+      <li>{{product.achievement4}}</li>
+      <li>{{product.achievement5}}</li>
+
+    <ul>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+{% endblock %}

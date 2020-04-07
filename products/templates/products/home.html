@@ -1,0 +1,43 @@
+{% extends 'base.html'%}
+
+{% block content %}
+{% load staticfiles %}
+
+{% for product in products.all %}
+<div class="jumbotron">
+  <div class="container">
+
+<div class="row">
+  <div class="col-4 col-sm-4 col-md-4"  onclick="window.location='{% url 'detail' product.id %}';" style="cursor: pointer;">
+    <img src="{{product.image.url}}" class="img-fluid" width="140" height="140"/>
+  </div>
+  <div class="col-8 col-sm-6 col-md-6"  onclick="window.location='{% url 'detail' product.id %}';" style="cursor: pointer;">
+    <strong>{{product.hunter.username}}<strong/><br/>
+      <i>{{product.address}}<i/><br/>
+      {{product.email}}<br/>
+    </div>
+</div>
+</div>
+
+<div class="row">
+<div class="col-8 offset-1 col-sm-8 col-md-8">
+    <a href="javascript:{document.getElementById('upvote{{product.id}}').submit()}"><button class="btn btn-secondary"><img src="{% static 'logo--.png'  %}" class="d-inline-block-align-top" width="40" height="40"/>  LIKE&nbsp&nbsp({{product.votes_total}})</button></a>
+</div>
+
+
+<form id='upvote{{ product.id }}' method="POST" action="{% url 'upvote' product.id %}">
+{% csrf_token %}
+<input type="hidden">
+</form>
+<p class="text-center text-light">
+<a class="btn btn-primary" href="{% url 'update' product.id %}"><i class="far fa-edit"></i>&nbsp; Update</a>
+</p>
+<span></span>
+<p class="text-center text-light">
+<a class="btn btn-primary" href="{% url 'delete' product.id %}"><i class="far fa-edit"></i>&nbsp; Delete</a>
+</p>
+</div>
+</div>
+{% endfor %}
+
+{% endblock%}
